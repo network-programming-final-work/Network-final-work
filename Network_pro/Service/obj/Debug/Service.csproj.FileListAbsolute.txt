@@ -1,0 +1,7 @@
+H:\Network_FinalWork\Network_pro\Service\bin\Service.dll.config
+H:\Network_FinalWork\Network_pro\Service\bin\Service.dll
+H:\Network_FinalWork\Network_pro\Service\bin\Service.pdb
+H:\Network_FinalWork\Network_pro\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+H:\Network_FinalWork\Network_pro\Service\obj\Debug\Service.dll
+H:\Network_FinalWork\Network_pro\Service\obj\Debug\Service.pdb
+H:\Network_FinalWork\Network_pro\Service\obj\Debug\Service.csproj.AssemblyReference.cache
