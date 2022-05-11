@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fb6VJc88EYam3N9rkh06JAUac1B3y2VdDS8rPnz4tsl2lZbrg2RR8L9IiKJ91EVhpsF2/M+nCz6p3WlMxcUaww==",
+  "dgSpecHash": "hgjTXL9OTuzxOu6VHQMReJd7nVTSE/0+pR+oULJeFDZjVVgMttTaLb7hJ8QUxGSaz597yhkRVLxQhTu1lkvDMA==",
   "success": true,
-  "projectFilePath": "H:\\Network_FinalWork\\Network_pro\\Client\\Client.csproj",
+  "projectFilePath": "H:\\Network_FinalWork\\Network-final-work\\Network_pro\\Client\\Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\10315\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\10315\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",

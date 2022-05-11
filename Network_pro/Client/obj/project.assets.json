@@ -1039,11 +1039,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Network_FinalWork\\Network_pro\\Client\\Client.csproj",
+      "projectUniqueName": "H:\\Network_FinalWork\\Network-final-work\\Network_pro\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "H:\\Network_FinalWork\\Network_pro\\Client\\Client.csproj",
+      "projectPath": "H:\\Network_FinalWork\\Network-final-work\\Network_pro\\Client\\Client.csproj",
       "packagesPath": "C:\\Users\\10315\\.nuget\\packages\\",
-      "outputPath": "H:\\Network_FinalWork\\Network_pro\\Client\\obj\\",
+      "outputPath": "H:\\Network_FinalWork\\Network-final-work\\Network_pro\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1064,8 +1064,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "H:\\Network_FinalWork\\Network_pro\\Service\\Service.csproj": {
-              "projectPath": "H:\\Network_FinalWork\\Network_pro\\Service\\Service.csproj"
+            "H:\\Network_FinalWork\\Network-final-work\\Network_pro\\Service\\Service.csproj": {
+              "projectPath": "H:\\Network_FinalWork\\Network-final-work\\Network_pro\\Service\\Service.csproj"
             }
           }
         }

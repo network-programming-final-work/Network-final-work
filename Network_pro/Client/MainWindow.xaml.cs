@@ -12,14 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Service;
 
 namespace Client
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, IService1Callback
     {
+        private Service1 client;
         public MainWindow()
         {
             InitializeComponent();
@@ -38,7 +40,20 @@ namespace Client
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-          //  client.Talk(tableIndex, UserName, textBoxTalk.Text);
+            UserName = textBoxUserName.Text;
+            client.Talk(UserName, textBoxTalk.Text);
+        }
+        public string UserName
+        {
+            get { return textBoxUserName.Text; }
+            set { textBoxUserName.Text = value; }
+        }
+        private void textBoxTalk_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                client.Talk(UserName, textBoxTalk.Text);
+            }
         }
     }
 }

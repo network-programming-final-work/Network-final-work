@@ -15,7 +15,7 @@ namespace Service
     public interface IService1
     {
         [OperationContract(IsOneWay = true)]
-        void Talk(int index, string userName, string message);
+        void Talk(string userName, string message);
     }
     public interface IService1Callback
     {

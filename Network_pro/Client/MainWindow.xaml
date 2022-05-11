@@ -11,5 +11,7 @@
                      BorderThickness="1" Padding="0 5 0 0"
                      ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="225,46,126,103"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="612,380,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBox HorizontalAlignment="Left" Name="textBoxTalk" Height="56" Margin="225,365,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="353" KeyDown="textBoxTalk_KeyDown"/>
+        <TextBox HorizontalAlignment="Left" Margin="61,91,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="textBoxUserName" Height="55"/>
     </Grid>
 </Window>
