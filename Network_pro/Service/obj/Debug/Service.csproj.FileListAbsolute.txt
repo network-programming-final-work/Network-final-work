@@ -11,3 +11,4 @@ H:\Network_FinalWork\Network-final-work\Network_pro\Service\bin\Service.pdb
 H:\Network_FinalWork\Network-final-work\Network_pro\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
 H:\Network_FinalWork\Network-final-work\Network_pro\Service\obj\Debug\Service.dll
 H:\Network_FinalWork\Network-final-work\Network_pro\Service\obj\Debug\Service.pdb
+H:\Network_FinalWork\Network-final-work\Network_pro\Service\obj\Debug\Service.csproj.AssemblyReference.cache

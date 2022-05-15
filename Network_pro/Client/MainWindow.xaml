@@ -13,5 +13,6 @@
         <Button Content="Button" HorizontalAlignment="Left" Margin="612,380,0,0" VerticalAlignment="Top" Click="Button_Click"/>
         <TextBox HorizontalAlignment="Left" Name="textBoxTalk" Height="56" Margin="225,365,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="353" KeyDown="textBoxTalk_KeyDown"/>
         <TextBox HorizontalAlignment="Left" Margin="61,91,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="textBoxUserName" Height="55"/>
+        <Button Name="btnLogin" Content="btnStart" HorizontalAlignment="Left" Height="36" Margin="71,215,0,0" VerticalAlignment="Top" Width="66" Click="Button_Click_1"/>
     </Grid>
 </Window>

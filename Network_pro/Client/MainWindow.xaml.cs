@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,9 +23,22 @@ namespace Client
     public partial class MainWindow : Window, IService1Callback
     {
         private Service1 client;
+       
         public MainWindow()
         {
             InitializeComponent();
+        }
+        private void AddMessage(string str)
+        {
+            TextBlock t = new TextBlock();
+            t.Text = str;
+            t.Foreground = Brushes.Blue;
+            listBoxMessage.Items.Add(t);
+        }
+        private static void ChangeState(Button btnStart, bool isStart, Button btnStop, bool isStop)
+        {
+            btnStart.IsEnabled = isStart;
+            btnStop.IsEnabled = isStop;
         }
         private void AddColorMessage(string str, SolidColorBrush color)
         {
@@ -54,6 +68,35 @@ namespace Client
             {
                 client.Talk(UserName, textBoxTalk.Text);
             }
+        }
+
+        public void ShowLogin(string loginUserName, int maxTables)
+        {
+            if (loginUserName == UserName)
+            {
+                MessageBox.Show("ok");
+            }
+            AddMessage(loginUserName + "进入大厅。");
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+            UserName = textBoxUserName.Text;
+            this.Cursor = Cursors.Wait;
+          //  client = new Service1(new InstanceContext(this));
+            try
+            {
+                client.Login(textBoxUserName.Text);
+               // serviceTextBlock.Text = "服务端地址：" + client.Endpoint.ListenUri.ToString();
+             
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("与服务端连接失败：" + ex.Message);
+                return;
+            }
+            this.Cursor = Cursors.Arrow;
         }
     }
 }

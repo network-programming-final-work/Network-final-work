@@ -7,11 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Connected Services\ServiceReference1\Reference.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\Reference.cs" />
+    <COMReference Include="{bee4bfec-6683-3e67-9167-3c0cbc68f40a}">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>4</VersionMinor>
+      <VersionMajor>2</VersionMajor>
+      <Guid>bee4bfec-6683-3e67-9167-3c0cbc68f40a</Guid>
+    </COMReference>
+    <COMReference Include="{c4f9d6eb-4fbb-3341-a582-aea37ed6da94}">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>8</VersionMajor>
+      <Guid>c4f9d6eb-4fbb-3341-a582-aea37ed6da94</Guid>
+    </COMReference>
   </ItemGroup>
 
   <ItemGroup>

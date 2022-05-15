@@ -6,35 +6,41 @@
 //     代码重新生成。
 // </auto-generated>
 //------------------------------------------------------------------------------
-
+using System;
 namespace ServiceReference1
 {
     
     
-    [Microsoft.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+   // [Microsoft.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="Network_pro", ConfigurationName="ServiceReference1.IService1", CallbackContract=typeof(ServiceReference1.IService1Callback))]
     public interface IService1
     {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="Network_pro/IService1/Talk")]
         System.Threading.Tasks.Task TalkAsync(string userName, string message);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="Network_pro/IService1/Login")]
+        System.Threading.Tasks.Task LoginAsync(string userName);
     }
     
-    [Microsoft.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+   // [Microsoft.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     public interface IService1Callback
     {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="Network_pro/IService1/Talk")]
         void Talk(string userName, string message);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="Network_pro/IService1/Login")]
+        void Login(string userName);
     }
     
-    [Microsoft.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+  //  [Microsoft.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     public interface IService1Channel : ServiceReference1.IService1, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [Microsoft.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil-lib", "2.0.3.0")]
+   // [Microsoft.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil-lib", "2.0.3.0")]
     public partial class Service1Client : System.ServiceModel.DuplexClientBase<ServiceReference1.IService1>, ServiceReference1.IService1
     {
         
@@ -66,6 +72,11 @@ namespace ServiceReference1
         public System.Threading.Tasks.Task TalkAsync(string userName, string message)
         {
             return base.Channel.TalkAsync(userName, message);
+        }
+        
+        public System.Threading.Tasks.Task LoginAsync(string userName)
+        {
+            return base.Channel.LoginAsync(userName);
         }
     }
 }
