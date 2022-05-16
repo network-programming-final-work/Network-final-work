@@ -1,18 +1,23 @@
-﻿<Window x:Class="Client.MainWindow"
+﻿<Window x:Class="client.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Client"
+        xmlns:local="clr-namespace:client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow"  >
     <Grid>
-        <ListBox Name="listBoxMessage"
-                     BorderThickness="1" Padding="0 5 0 0"
-                     ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="225,46,126,103"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="612,380,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <TextBox HorizontalAlignment="Left" Name="textBoxTalk" Height="56" Margin="225,365,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="353" KeyDown="textBoxTalk_KeyDown"/>
-        <TextBox HorizontalAlignment="Left" Margin="61,91,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="textBoxUserName" Height="55"/>
-        <Button Name="btnLogin" Content="btnStart" HorizontalAlignment="Left" Height="36" Margin="71,215,0,0" VerticalAlignment="Top" Width="66" Click="Button_Click_1"/>
+        <Grid Margin="10,18,3.333,1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="401" Width="752">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="textBoxUsername"  HorizontalAlignment="Left" Height="49" Margin="9.333,10,0,0" TextWrapping="Wrap" Text="用户名" VerticalAlignment="Top" Width="391" FontSize="19" VerticalContentAlignment="Center" Background="White" Foreground="#FF0E0101"/>
+            <Button  x:Name ="bConnectDisconnect" Click="Button_Click" Content="点击连接" HorizontalAlignment="Left" Margin="503,10,0,0" VerticalAlignment="Top" Width="239" Height="49" FontSize="19" Background="White" Foreground="#FF0E0101" HorizontalContentAlignment="Center"/>
+            <ListBox x:Name="listBoxChat" HorizontalAlignment="Left" Height="233" Margin="9,64,0,0" VerticalAlignment="Top" Width="733" FontSize="13" Background="White" Foreground="#FF0E0101" VerticalContentAlignment="Top"  />
+            <TextBox x:Name="textBoxMessage" HorizontalAlignment="Left" Height="89" Margin="9,302,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="733" KeyDown="textBoxMessage_KeyDown" FontSize="14" Background="White" Foreground="#FF0E0101" />
+
+        </Grid>
+
     </Grid>
 </Window>

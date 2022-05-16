@@ -1,14 +1,13 @@
-H:\Network_FinalWork\Network_pro\Service\bin\Service.dll.config
-H:\Network_FinalWork\Network_pro\Service\bin\Service.dll
-H:\Network_FinalWork\Network_pro\Service\bin\Service.pdb
-H:\Network_FinalWork\Network_pro\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
-H:\Network_FinalWork\Network_pro\Service\obj\Debug\Service.dll
-H:\Network_FinalWork\Network_pro\Service\obj\Debug\Service.pdb
-H:\Network_FinalWork\Network_pro\Service\obj\Debug\Service.csproj.AssemblyReference.cache
-H:\Network_FinalWork\Network-final-work\Network_pro\Service\bin\Service.dll.config
-H:\Network_FinalWork\Network-final-work\Network_pro\Service\bin\Service.dll
-H:\Network_FinalWork\Network-final-work\Network_pro\Service\bin\Service.pdb
-H:\Network_FinalWork\Network-final-work\Network_pro\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
-H:\Network_FinalWork\Network-final-work\Network_pro\Service\obj\Debug\Service.dll
-H:\Network_FinalWork\Network-final-work\Network_pro\Service\obj\Debug\Service.pdb
-H:\Network_FinalWork\Network-final-work\Network_pro\Service\obj\Debug\Service.csproj.AssemblyReference.cache
+c:\Users\administrator\documents\visual studio 2015\Projects\client\Service\bin\Service.dll.config
+c:\Users\administrator\documents\visual studio 2015\Projects\client\Service\bin\Service.dll
+c:\Users\administrator\documents\visual studio 2015\Projects\client\Service\bin\Service.pdb
+c:\Users\administrator\documents\visual studio 2015\Projects\client\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+c:\Users\administrator\documents\visual studio 2015\Projects\client\Service\obj\Debug\Service.dll
+c:\Users\administrator\documents\visual studio 2015\Projects\client\Service\obj\Debug\Service.pdb
+C:\Users\10315\Desktop\client\Service\bin\Service.dll.config
+C:\Users\10315\Desktop\client\Service\bin\Service.dll
+C:\Users\10315\Desktop\client\Service\bin\Service.pdb
+C:\Users\10315\Desktop\client\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\Users\10315\Desktop\client\Service\obj\Debug\Service.dll
+C:\Users\10315\Desktop\client\Service\obj\Debug\Service.pdb
+C:\Users\10315\Desktop\client\Service\obj\Debug\Service.csproj.AssemblyReference.cache

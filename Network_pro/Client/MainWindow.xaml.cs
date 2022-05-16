@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,90 +12,87 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ServiceModel;
 using Service;
+using client.ServiceReference1;
 
-namespace Client
+namespace client
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window, IService1Callback
+    public partial class MainWindow : Window, IServiceChatCallback
     {
-        private Service1 client;
-       
+        bool isConnected = false;
+        ServiceReference1.ServiceChatClient client;
+        int ID;
         public MainWindow()
         {
             InitializeComponent();
         }
-        private void AddMessage(string str)
+
+        void ConnectUser()
         {
-            TextBlock t = new TextBlock();
-            t.Text = str;
-            t.Foreground = Brushes.Blue;
-            listBoxMessage.Items.Add(t);
+            if (!isConnected)
+            {
+                client = new ServiceChatClient(new System.ServiceModel.InstanceContext(this));
+                ID = client.Connect(textBoxUsername.Text);
+                textBoxUsername.IsEnabled = false;
+
+                bConnectDisconnect.Content = "断开连接";
+                isConnected = true;
+            }
         }
-        private static void ChangeState(Button btnStart, bool isStart, Button btnStop, bool isStop)
+
+        void DisconnectUser()
         {
-            btnStart.IsEnabled = isStart;
-            btnStop.IsEnabled = isStop;
-        }
-        private void AddColorMessage(string str, SolidColorBrush color)
-        {
-            TextBlock t = new TextBlock();
-            t.Text = str;
-            t.Foreground = color;
-            listBoxMessage.Items.Add(t);
-        }
-        public void ShowTalk(string userName, string message)
-        {
-            AddColorMessage(string.Format("{0}：{1}", userName, message), Brushes.Black);
+            if (isConnected)
+            {
+                client.Disconnect(ID);
+                client = null;
+                textBoxUsername.IsEnabled = true;
+
+                bConnectDisconnect.Content = "连接";
+                isConnected = false;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            UserName = textBoxUserName.Text;
-            client.Talk(UserName, textBoxTalk.Text);
+            if (isConnected)
+            {
+                DisconnectUser();
+            }
+            else
+            {
+                ConnectUser();
+            }
         }
-        public string UserName
+
+        public void MessageCallBack(string message)
         {
-            get { return textBoxUserName.Text; }
-            set { textBoxUserName.Text = value; }
+            listBoxChat.Items.Add(message);
+            listBoxChat.ScrollIntoView(listBoxChat.Items[listBoxChat.Items.Count - 1]);
         }
-        private void textBoxTalk_KeyDown(object sender, KeyEventArgs e)
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            DisconnectUser();
+        }
+
+        private void textBoxMessage_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                client.Talk(UserName, textBoxTalk.Text);
+                if (client != null)
+                    client.SendMessage(textBoxMessage.Text, ID);
+                textBoxMessage.Text = string.Empty;
             }
-        }
-
-        public void ShowLogin(string loginUserName, int maxTables)
-        {
-            if (loginUserName == UserName)
-            {
-                MessageBox.Show("ok");
-            }
-            AddMessage(loginUserName + "进入大厅。");
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-            UserName = textBoxUserName.Text;
-            this.Cursor = Cursors.Wait;
-          //  client = new Service1(new InstanceContext(this));
-            try
-            {
-                client.Login(textBoxUserName.Text);
-               // serviceTextBlock.Text = "服务端地址：" + client.Endpoint.ListenUri.ToString();
-             
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("与服务端连接失败：" + ex.Message);
-                return;
-            }
-            this.Cursor = Cursors.Arrow;
         }
     }
 }
