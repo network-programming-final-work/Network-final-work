@@ -63,8 +63,7 @@ namespace DZY_NoteSystem
             string name = txtUserName.Text.ToString();
             string pwd = txtUserPwd.Password.ToString();
             Service1Client service = new Service1Client();
-            if (PasswordStrength(pwd) == Strength.Strong)
-            {
+         
                  bool login = service.IsLogin(name, pwd);
                 if (login)
                 {
@@ -80,11 +79,8 @@ namespace DZY_NoteSystem
                 {
                     label.Content = "状态提示：登录失败，请重新输入！";
                 }
-            }
-            else
-            {
-                label.Content = "密码强度太低！";
-            }
+            
+           
            
         }
 
