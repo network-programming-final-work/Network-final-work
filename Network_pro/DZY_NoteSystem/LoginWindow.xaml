@@ -1,0 +1,35 @@
+﻿<Window x:Class="DZY_NoteSystem.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DZY_NoteSystem"
+        mc:Ignorable="d"
+        Title="登录界面" Height="230" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <Label Content="-----------------请输入您的登录信息-----------------" VerticalAlignment="Center"></Label>
+        </DockPanel>
+        <DockPanel Grid.Row="1">
+            <Label Content="用户名：" VerticalAlignment="Center" FontSize="15px"></Label>
+            <TextBox  x:Name="txtUserName" Height="30" VerticalAlignment="Center" Margin="0 0 40 0" VerticalContentAlignment="Center"></TextBox>
+        </DockPanel>
+        <DockPanel Grid.Row="2">
+            <Label Content="密   码：" VerticalAlignment="Center" FontSize="15px"></Label>
+            <PasswordBox x:Name="txtUserPwd" Height="30" VerticalAlignment="Center" Margin="0 0 40 0" VerticalContentAlignment="Center"></PasswordBox>
+         
+        </DockPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Width="100" Content="登录" x:Name="btnLogin" Click="btnLogin_Click" Margin="10 0 10 0"></Button>
+            <Button Width="100" Content="注册" x:Name="btnRegister" Click="btnRegister_Click" Margin="10 0 10 0"></Button>
+        </StackPanel>
+        <Label x:Name="label" Content="登录状态：" Grid.Row="4"></Label>
+    </Grid>
+</Window>
