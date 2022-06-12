@@ -1,13 +1,52 @@
-c:\Users\administrator\documents\visual studio 2015\Projects\client\Service\bin\Service.dll.config
-c:\Users\administrator\documents\visual studio 2015\Projects\client\Service\bin\Service.dll
-c:\Users\administrator\documents\visual studio 2015\Projects\client\Service\bin\Service.pdb
-c:\Users\administrator\documents\visual studio 2015\Projects\client\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
-c:\Users\administrator\documents\visual studio 2015\Projects\client\Service\obj\Debug\Service.dll
-c:\Users\administrator\documents\visual studio 2015\Projects\client\Service\obj\Debug\Service.pdb
-C:\Users\10315\Desktop\client\Service\bin\Service.dll.config
-C:\Users\10315\Desktop\client\Service\bin\Service.dll
-C:\Users\10315\Desktop\client\Service\bin\Service.pdb
-C:\Users\10315\Desktop\client\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
-C:\Users\10315\Desktop\client\Service\obj\Debug\Service.dll
-C:\Users\10315\Desktop\client\Service\obj\Debug\Service.pdb
-C:\Users\10315\Desktop\client\Service\obj\Debug\Service.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\DZY_NoteSystem\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\DZY_NoteSystem\Service\bin\Service.dll.config
+C:\Users\Administrator\source\repos\DZY_NoteSystem\Service\bin\Service.dll
+C:\Users\Administrator\source\repos\DZY_NoteSystem\Service\bin\Service.pdb
+C:\Users\Administrator\source\repos\DZY_NoteSystem\Service\obj\Debug\Service.dll
+C:\Users\Administrator\source\repos\DZY_NoteSystem\Service\obj\Debug\Service.pdb
+C:\Users\Administrator\source\repos\DZY_NoteSystem\Service\obj\Debug\Service.csprojAssemblyReference.cache
+F:\21.工作\6.2020.06.14C#高级程序设计笔记系统（大作业）\1171325345_朱月_项目内容\DZY_NoteSystem\Service\bin\Service.dll.config
+F:\21.工作\6.2020.06.14C#高级程序设计笔记系统（大作业）\1171325345_朱月_项目内容\DZY_NoteSystem\Service\bin\Service.dll
+F:\21.工作\6.2020.06.14C#高级程序设计笔记系统（大作业）\1171325345_朱月_项目内容\DZY_NoteSystem\Service\bin\Service.pdb
+F:\21.工作\6.2020.06.14C#高级程序设计笔记系统（大作业）\1171325345_朱月_项目内容\DZY_NoteSystem\Service\obj\Debug\Service.csprojAssemblyReference.cache
+F:\21.工作\6.2020.06.14C#高级程序设计笔记系统（大作业）\1171325345_朱月_项目内容\DZY_NoteSystem\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+F:\21.工作\6.2020.06.14C#高级程序设计笔记系统（大作业）\1171325345_朱月_项目内容\DZY_NoteSystem\Service\obj\Debug\Service.dll
+F:\21.工作\6.2020.06.14C#高级程序设计笔记系统（大作业）\1171325345_朱月_项目内容\DZY_NoteSystem\Service\obj\Debug\Service.pdb
+C:\Users\10315\Desktop\DZY_NoteSystem\Service\bin\Service.dll.config
+C:\Users\10315\Desktop\DZY_NoteSystem\Service\bin\Service.dll
+C:\Users\10315\Desktop\DZY_NoteSystem\Service\bin\Service.pdb
+C:\Users\10315\Desktop\DZY_NoteSystem\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\Users\10315\Desktop\DZY_NoteSystem\Service\obj\Debug\Service.dll
+C:\Users\10315\Desktop\DZY_NoteSystem\Service\obj\Debug\Service.pdb
+C:\Users\DELL\Desktop\DZY_NoteSystem\Service\bin\Service.dll.config
+C:\Users\DELL\Desktop\DZY_NoteSystem\Service\bin\Service.dll
+C:\Users\DELL\Desktop\DZY_NoteSystem\Service\bin\Service.pdb
+C:\Users\DELL\Desktop\DZY_NoteSystem\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\DZY_NoteSystem\Service\obj\Debug\Service.dll
+C:\Users\DELL\Desktop\DZY_NoteSystem\Service\obj\Debug\Service.pdb
+C:\Users\26968\Desktop\DZY_NoteSystem\Service\bin\Service.dll.config
+C:\Users\26968\Desktop\DZY_NoteSystem\Service\bin\Service.dll
+C:\Users\26968\Desktop\DZY_NoteSystem\Service\bin\Service.pdb
+C:\Users\26968\Desktop\DZY_NoteSystem\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\Users\26968\Desktop\DZY_NoteSystem\Service\obj\Debug\Service.dll
+C:\Users\26968\Desktop\DZY_NoteSystem\Service\obj\Debug\Service.pdb
+C:\Users\26968\Desktop\新建文件夹\Service\bin\Service.dll.config
+C:\Users\26968\Desktop\新建文件夹\Service\bin\Service.dll
+C:\Users\26968\Desktop\新建文件夹\Service\bin\Service.pdb
+C:\Users\26968\Desktop\新建文件夹\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\Users\26968\Desktop\新建文件夹\Service\obj\Debug\Service.dll
+C:\Users\26968\Desktop\新建文件夹\Service\obj\Debug\Service.pdb
+C:\Users\10315\Desktop\新建文件夹\Service\bin\Service.dll.config
+C:\Users\10315\Desktop\新建文件夹\Service\bin\Service.dll
+C:\Users\10315\Desktop\新建文件夹\Service\bin\Service.pdb
+C:\Users\10315\Desktop\新建文件夹\Service\obj\Debug\Service.csproj.AssemblyReference.cache
+C:\Users\10315\Desktop\新建文件夹\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\Users\10315\Desktop\新建文件夹\Service\obj\Debug\Service.dll
+C:\Users\10315\Desktop\新建文件夹\Service\obj\Debug\Service.pdb
+C:\Users\DELL\Desktop\新建文件夹\Service\bin\Service.dll.config
+C:\Users\DELL\Desktop\新建文件夹\Service\bin\Service.dll
+C:\Users\DELL\Desktop\新建文件夹\Service\bin\Service.pdb
+C:\Users\DELL\Desktop\新建文件夹\Service\obj\Debug\Service.csproj.AssemblyReference.cache
+C:\Users\DELL\Desktop\新建文件夹\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\新建文件夹\Service\obj\Debug\Service.dll
+C:\Users\DELL\Desktop\新建文件夹\Service\obj\Debug\Service.pdb

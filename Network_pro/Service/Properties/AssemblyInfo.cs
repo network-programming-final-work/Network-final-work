@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Service")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Service")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2022")]
+[assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("1209843b-f1d7-4b64-9b8e-0af2bbb38462")]
+[assembly: Guid("5f601ab2-7601-4de9-a94c-364ffc5223c2")]
 
 // 程序集的版本信息由下列四个值组成: 
 //
@@ -30,7 +30,7 @@ using System.Runtime.InteropServices;
 //      修订号
 //
 // 您可以指定所有值，也可以通过使用“*”来使用
-// 方法是按如下所示使用“*”: :
+//通过使用 "*"，如下所示:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]

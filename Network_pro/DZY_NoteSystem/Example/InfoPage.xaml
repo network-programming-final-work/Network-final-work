@@ -1,0 +1,93 @@
+﻿<Page x:Class="DZY_NoteSystem.Example.InfoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DZY_NoteSystem.Example"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="InfoPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="textBlockMessage" Grid.Row="0"
+                 Text="To Do List" Background="Beige" TextAlignment="Center"/>
+        <DockPanel Grid.Row="1" HorizontalAlignment="Left">
+            <Label Content="待完成" VerticalAlignment="Center" x:Name="lavel"></Label>
+            <DataGrid x:Name="gridview0" HorizontalAlignment="Left" GridLinesVisibility="None" AutoGenerateColumns="False" Height="180" Width="750" ItemsSource="{Binding}" AllowDrop="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="50" FontSize="15" Header="编号" Binding="{Binding InfoId}" IsReadOnly="True"></DataGridTextColumn>
+                    <DataGridTextColumn Width="300" FontSize="15" Header="内容" Binding="{Binding InfoContent}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="60" FontSize="15" Header="类别" Binding="{Binding TypeName}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="85" FontSize="15" Header="完成时间" Binding="{Binding FinishTime}"></DataGridTextColumn>
+                    <DataGridTemplateColumn Header="已完成" CanUserReorder="False">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="haveDone" Width="20" Content="" Uid="InfoId" Click="haveDone_Click"></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="取消" CanUserReorder="False">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="Cancel" Width="20" Content="" Uid="InfoId" Click="Cancel_Click"></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="修改" CanUserReorder="False">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="Update" Width="20" Content="" Uid="InfoId" Click="Update_Click"></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+        <DockPanel Grid.Row="2">
+            <Label Content="已完成" VerticalAlignment="Center"></Label>
+            <DataGrid x:Name="gridview1" HorizontalAlignment="Left" GridLinesVisibility="None" AutoGenerateColumns="False" Height="180" Width="750" SelectionUnit="FullRow">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="50" FontSize="15" Header="编号" Binding="{Binding InfoId}" IsReadOnly="True"></DataGridTextColumn>
+                    <DataGridTextColumn Width="300" FontSize="15" Header="内容" Binding="{Binding InfoContent}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="60" FontSize="15" Header="类别" Binding="{Binding TypeName}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="85" FontSize="15" Header="完成时间" Binding="{Binding FinishTime}"></DataGridTextColumn>
+                    <DataGridTemplateColumn Header="取消" CanUserReorder="False" Width="50">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Width="20" Content="" Uid="InfoId" Click="Cancel_Click"></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="修改" CanUserReorder="False" Width="50">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Width="20" Content="" Uid="InfoId" Click="Update_Click"></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+        <DockPanel Grid.Row="3">
+            <TextBlock Text="修改：" Margin="10 0 0 0" DockPanel.Dock="Left" VerticalAlignment="Center"/>
+            <Button Name="Save" Content="保存" Width="50" DockPanel.Dock="Right" Margin="10 0 10 0" Click="Save_Click" Height="29" VerticalAlignment="Top"/>
+            <Label Content="内容"></Label>
+            <TextBox x:Name="txtConten" Width="200" VerticalContentAlignment="Center"></TextBox>
+            <Label Content="类别"></Label>
+            <ComboBox x:Name="type"  HorizontalAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="80" SelectedIndex="0">
+                <ComboBoxItem Content="学习"/>
+                <ComboBoxItem Content="运动"/>
+                <ComboBoxItem Content="休息"/>
+                <ComboBoxItem Content="小账"/>
+                <ComboBoxItem Content="生活"/>
+            </ComboBox>
+            <Label Content="完成时间"></Label>
+            <TextBox x:Name="txtFinishTime" Width="200" VerticalContentAlignment="Center"></TextBox>
+        </DockPanel>
+    </Grid>
+</Page>

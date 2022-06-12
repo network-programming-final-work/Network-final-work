@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -8,23 +9,28 @@ using System.Text;
 
 namespace Service
 {
-    [ServiceContract(CallbackContract = typeof(IServerChatCallback))]
-    public interface IServiceChat
+    // 注意: 使用“重构”菜单上的“重命名”命令，可以同时更改代码和配置文件中的接口名“IService1”。
+    [ServiceContract]
+    public interface IService1
     {
-        [OperationContract]
-        int Connect(string name);
 
         [OperationContract]
-        void Disconnect(int identificator);
-
-        [OperationContract(IsOneWay = true)]
-        void SendMessage(string message, int identificator);
+        bool IsLogin(string name, string pwd);
+        [OperationContract]
+        bool AddUser(string name, string pwd);
+        [OperationContract]
+        DataTable showInfo(int state);
+        [OperationContract]
+        bool ChangeState(int state,int id);
+        [OperationContract]
+        int getId();
+        [OperationContract]
+        bool Update(int infoId, string infoContent, int typeInfo, DateTime finishTime);
+        [OperationContract]
+        bool Add(string infoContent, int typeInfo, DateTime finishTime, int infoState);
+        [OperationContract]
+        bool Delete(int infoId);
+        [OperationContract]
+        DataTable SearchInfo(string infoContent);
     }
-
-    public interface IServerChatCallback
-    {
-        [OperationContract(IsOneWay = true)]
-        void MessageCallBack(string message);
-    }
-
 }

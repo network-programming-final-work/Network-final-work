@@ -1,0 +1,76 @@
+﻿<Window x:Class="DZY_NoteSystem.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DZY_NoteSystem"
+        mc:Ignorable="d"
+        Title="登录" Height="320" 
+     Width="420"		
+     ResizeMode="NoResize"	
+     Background="#EBF2F9"	
+     AllowsTransparency="False"	
+     WindowStyle="none"		
+     WindowStartupLocation="CenterScreen">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="180" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+            
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="120" />
+        </Grid.ColumnDefinitions>
+        <Image Source="Image/title.png" Stretch="UniformToFill" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+        <Image Source="Image/user.png" Grid.Row="1" Grid.Column="0" Margin="21,5,0,0" />
+        <!--账号密码-->
+        <TextBox   Height="30" Width="180" FontSize="14" MaxLength="20" TextBlock.LineHeight="22" TextBlock.LineStackingStrategy="BlockLineHeight"
+                 Foreground="Black" BorderBrush="#ccc" Grid.Row="1" Grid.Column="1" Margin="0,10,0,50" x:Name="txtUserName">
+            <TextBox.Resources>
+                <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
+                    <VisualBrush.Visual>
+                        <TextBlock FontStyle="Italic" Text="请输入用户名"/>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </TextBox.Resources>
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Style.Triggers>
+                        <Trigger Property="Text" Value="{x:Null}">
+                            <Setter Property="Background" Value="{StaticResource HintText}"/>
+                        </Trigger>
+                        <Trigger Property="Text" Value="">
+                            <Setter Property="Background" Value="{StaticResource HintText}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <PasswordBox Background="#00000000" Height="30" Width="180" FontSize="14" MaxLength="20" TextBlock.LineHeight="22" TextBlock.LineStackingStrategy="BlockLineHeight"
+                 Foreground="Black" BorderBrush="#ccc" Grid.Row="1" Grid.Column="1" Margin="0,40,0,20"     x:Name="txtUserPwd">
+            
+        </PasswordBox>
+        <!--记住密码等CheckBox-->
+        <CheckBox x:Name="ckbRemember" Grid.Row="1" Grid.Column="1" Foreground="#8D9195" BorderBrush="#8d9195" FontSize="11" TextBlock.LineHeight="16"
+                  TextBlock.LineStackingStrategy="BlockLineHeight" Margin="0,75,0,-25">
+            记住密码
+        </CheckBox>
+        <CheckBox IsChecked="False" x:Name="LoginCheckBox" Grid.Row="1" Grid.Column="1" Foreground="#8D9195" BorderBrush="#8d9195" FontSize="11" TextBlock.LineHeight="16"
+                  TextBlock.LineStackingStrategy="BlockLineHeight" Margin="110,75,0,-35" Grid.RowSpan="2">
+            自动登录
+        </CheckBox>
+        <!--注册账号-->
+        <Button Grid.Column="2" Margin="20,19,20,50" BorderThickness="0" Background="#00000000" FontSize="11" Foreground="#2786E4" Cursor="Hand" Grid.Row="1" x:Name="btnRegister" Click="btnRegister_Click">
+            注册账号
+        </Button>
+        <!--login按钮-->
+        <Button Content="登   录" Height="30" Width="180" FontSize="12"
+                Background="	#6495ED" Cursor="Hand" Foreground="White" 
+                BorderBrush="	#6495ED" Grid.Column="1" Margin="0,10" Grid.Row="2" x:Name="btnLogin" Click="btnLogin_Click"/>
+        
+    </Grid>
+</Window>
