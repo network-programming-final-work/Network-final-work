@@ -6,15 +6,15 @@
         xmlns:local="clr-namespace:DZY_NoteSystem"
         mc:Ignorable="d"
         Title="笔记系统" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#EBF2F9">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <DockPanel Grid.Row="0" Background="Cornsilk" LastChildFill="False">
-            <TextBlock Text="用户名：" DockPanel.Dock="Left" VerticalAlignment="Center"/>
+    <DockPanel Grid.Row="0" Background="Cornsilk" LastChildFill="False" Height="30">
+            <TextBlock Text="用户名：" DockPanel.Dock="Left" VerticalAlignment="Center" Foreground="#2786E4" Padding="30 0 0 0"/>
             <Label x:Name="userName" Content=" " Width="100" VerticalAlignment="Center"/>
-            <Button Name="btnLogout" Content="退出" DockPanel.Dock="Left" Padding="10 0 10 0" Margin="5" Click="btnLogout_Click"/>
+            <Button Name="btnLogout" Content="退出" DockPanel.Dock="Left" Padding="10 0 10 0" Margin="5" Click="btnLogout_Click" Background="White"/>
         </DockPanel>
         <DockPanel Name="dockPanel1" Grid.Row="1">
             <Grid Width="100">
@@ -22,7 +22,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="选择功能" Grid.Row="0" Background="Blue" Foreground="White" TextAlignment="Center"/>
+                <TextBlock Text="选择功能" Grid.Row="0" Background="Gray" Foreground="White" TextAlignment="Center" Height="30" Padding="0 8 0 0"/>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -35,13 +35,17 @@
                                 <Setter Property="Margin" Value="5 10 5 0"></Setter>
                                 <Setter Property="Padding" Value="15 0 15 0"></Setter>
                                 <Setter Property="FontSize" Value="10"></Setter>
+                                <Setter Property="FontWeight" Value="Bold"></Setter>
+                                <Setter Property="Width" Value="90"></Setter>
+                                <Setter Property="Height" Value="30"></Setter>
+                                <Setter Property="Foreground" Value="White"></Setter>
                                 <EventSetter Event="Click" Handler="Button_Click"></EventSetter>
                             </Style>
                         </StackPanel.Resources>
-                        <Button Content="显示任务信息" Tag="/Example/InfoPage.xaml"></Button>
-                        <Button Content="添 加  信 息" Tag="/Example/AddInfoPage.xaml"></Button>
-                        <Button Content="查看取消任务" Tag="/Example/CancelPage.xaml"></Button>
-                        <Button Content="模 糊  搜 索" Tag="/Example/SearchPage.xaml"></Button>
+                        <Button Content="显示任务信息" Tag="/Example/InfoPage.xaml" Background="#6495ED"></Button>
+                        <Button Content="添 加  信 息" Tag="/Example/AddInfoPage.xaml" Background="#6495ED"></Button>
+                        <Button Content="查看取消任务" Tag="/Example/CancelPage.xaml" Background="#6495ED"></Button>
+                        <Button Content="模 糊  搜 索" Tag="/Example/SearchPage.xaml" Background="#6495ED"></Button>
                     </StackPanel>
                 </Grid>
             </Grid>

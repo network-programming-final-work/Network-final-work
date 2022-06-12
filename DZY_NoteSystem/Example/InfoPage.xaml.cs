@@ -74,8 +74,13 @@ namespace DZY_NoteSystem.Example
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
+           
             string infoContent = txtConten.Text;
             int typeid = type.SelectedIndex+1;
+            if (infoContent == null)
+            {
+                MessageBox.Show("不能为空！");
+            }
             DateTime finishTime = Convert.ToDateTime(txtFinishTime.Text);
             int num = DateTime.Compare(finishTime, DateTime.Now);
             if (num <= 0)

@@ -75,7 +75,7 @@
         </DockPanel>
         <DockPanel Grid.Row="3">
             <TextBlock Text="修改：" Margin="10 0 0 0" DockPanel.Dock="Left" VerticalAlignment="Center"/>
-            <Button Name="Save" Content="保存" Width="50" DockPanel.Dock="Right" Margin="10 0 10 0" Click="Save_Click"/>
+            <Button Name="Save" Content="保存" Width="50" DockPanel.Dock="Right" Margin="10 0 10 0" Click="Save_Click" Height="29" VerticalAlignment="Top"/>
             <Label Content="内容"></Label>
             <TextBox x:Name="txtConten" Width="200" VerticalContentAlignment="Center"></TextBox>
             <Label Content="类别"></Label>

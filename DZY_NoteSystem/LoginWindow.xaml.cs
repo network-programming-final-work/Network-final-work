@@ -1,6 +1,7 @@
 ﻿using DZY_NoteSystem.LoginServiceReference;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,28 @@ namespace DZY_NoteSystem
         public LoginWindow()
         {
             InitializeComponent();
+            // txtUserName.Text = "请输入用户名";
+            // txtUserName.Foreground = Brushes.Gray;
+            txtUserName.Text = GetSettingString("userName");
+            txtUserPwd.Password = GetSettingString("password");
+           
+            if (GetSettingString("isRemember") == "true")
+            {
+                ckbRemember.IsChecked = true;
+            }
+            else
+            {
+                ckbRemember.IsChecked = false;
+            }
+            if (GetSettingString("isLogin") == "true")
+            {
+                
+                btnLogin_Click(null, null);
+            }
+            else
+            {
+                LoginCheckBox.IsChecked = false;
+            }
         }
 
         private enum Strength
@@ -63,11 +86,15 @@ namespace DZY_NoteSystem
             string name = txtUserName.Text.ToString();
             string pwd = txtUserPwd.Password.ToString();
             Service1Client service = new Service1Client();
-         
-                 bool login = service.IsLogin(name, pwd);
+            bool login = service.IsLogin(name, pwd);
+            if (Convert.ToBoolean(ckbRemember.IsChecked))
+            {
+                UpdateSettingString("userName", txtUserName.Text);
+                UpdateSettingString("password", txtUserPwd.Password);
+                UpdateSettingString("isRemember", "true");
                 if (login)
                 {
-                    MessageBox.Show("登录成功！");
+                   // MessageBox.Show("登录成功！");
 
                     System.Threading.Thread.Sleep(1000);
                     MainWindow main = new MainWindow(name);
@@ -77,8 +104,33 @@ namespace DZY_NoteSystem
                 }
                 else
                 {
-                    label.Content = "状态提示：登录失败，请重新输入！";
+                    MessageBox.Show("登录失败，请重新输入！");
                 }
+            }
+            else
+            {
+                UpdateSettingString("userName", "");
+                UpdateSettingString("password", "");
+                UpdateSettingString("isRemember", "");
+                if (login)
+                {
+                   // MessageBox.Show("登录成功！");
+
+                    System.Threading.Thread.Sleep(1000);
+                    MainWindow main = new MainWindow(name);
+                    main.Show();
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("登录失败，请重新输入！");
+                }
+            }
+
+          
+              
+               
             
            
            
@@ -90,5 +142,65 @@ namespace DZY_NoteSystem
             register.Show();
             this.Close();
         }
+
+        private void txtUserName_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtUserName.Text = "";
+        }
+
+        private void txtUserName_LostFocus(object sender, RoutedEventArgs e)
+        {
+            txtUserName.Text = "请输入用户名";
+            txtUserName.Foreground = Brushes.Gray;
+        }
+
+       /* private void txtUserPwd_LostFocus(object sender, RoutedEventArgs e)
+        {
+            txtUserPwd.Password = "";
+        }
+
+        private void txtUserPwd_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtUserPwd.Password = "请输入密码";
+            txtUserPwd.Foreground = Brushes.Gray;
+        }*/
+
+        /// <summary>
+        /// 读取客户设置
+        /// </summary>
+        /// <param name="settingName"></param>
+        /// <returns></returns>
+        public static string GetSettingString(string settingName)
+        {
+            try
+            {
+                string settingString = ConfigurationManager.AppSettings[settingName].ToString();
+                return settingString;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 更新设置
+        /// </summary>
+        /// <param name="settingName"></param>
+        /// <param name="valueName"></param>
+        public static void UpdateSettingString(string settingName, string valueName)
+        {
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            if (ConfigurationManager.AppSettings[settingName] != null)
+            {
+                config.AppSettings.Settings.Remove(settingName);
+            }
+            config.AppSettings.Settings.Add(settingName, valueName);
+            config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("appSettings");
+        }
+
+
     }
 }

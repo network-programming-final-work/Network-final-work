@@ -8,12 +8,16 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AddInfoPage">
 
-    <Grid Margin="20">
-        <Rectangle Grid.ColumnSpan="2" Fill="White" RadiusX="14" RadiusY="14" Stroke="Blue" StrokeDashArray="3"></Rectangle>
-        <Rectangle Grid.Column="0" Margin="7" Fill="#F0F9DB" RadiusX="10" RadiusY="10" Stroke="Blue" StrokeDashArray="3"></Rectangle>
-        <Rectangle Grid.Column="0" Margin="20" Fill="White" Stroke="Blue"></Rectangle>
-        <Calendar x:Name="finishTime" Margin="280 130 0 0" ></Calendar>
-        <Grid>
+    <Grid Margin="20" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="23*"/>
+            <ColumnDefinition Width="357*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.ColumnSpan="2" Fill="White" RadiusX="14" RadiusY="14" Stroke="Blue" StrokeDashArray="3" Margin="0,0,0,-0.4"></Rectangle>
+        <Rectangle Grid.Column="0" Margin="7,7,7,6.6" Fill="#F0F9DB" RadiusX="10" RadiusY="10" Stroke="Blue" StrokeDashArray="3" Grid.ColumnSpan="2"></Rectangle>
+        <Rectangle Grid.Column="0" Margin="20,20,20,19.6" Fill="White" Stroke="Blue" Grid.ColumnSpan="2"></Rectangle>
+        <Calendar x:Name="finishTime" Margin="355.6,216,-122,-86.4" Grid.Column="1" ></Calendar>
+        <Grid Grid.ColumnSpan="2" Margin="0,0,0,-0.4" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="130"></RowDefinition>
                 <RowDefinition Height="120"></RowDefinition>
@@ -36,11 +40,11 @@
                     <ComboBoxItem Content="已完成"/>
                     <ComboBoxItem Content="取消"/>
                 </ComboBox>
-                
+
             </DockPanel>
-     
-            <Button x:Name="SaveInfo" Grid.Row="2" Width="100" Height="30" Content="保存" Click="SaveInfo_Click" HorizontalAlignment="Left" Margin="170 0 0 0"></Button>
-       
+
+            <Button x:Name="SaveInfo" Grid.Row="2" Width="100" Height="30" Content="保存" Click="SaveInfo_Click" HorizontalAlignment="Left" Margin="170 0 0 0" Background="AliceBlue"></Button>
+
 
         </Grid>
     </Grid>
