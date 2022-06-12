@@ -32,36 +32,6 @@ namespace client.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/SendMessage")]
         System.Threading.Tasks.Task SendMessageAsync(string message, int identificator);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/sendid")]
-        void sendid(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/sendid")]
-        System.Threading.Tasks.Task sendidAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/sendID1")]
-        void sendID1(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/sendID1")]
-        System.Threading.Tasks.Task sendID1Async(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/sendFile")]
-        void sendFile(System.IO.FileInfo fileInfo);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/sendFile")]
-        System.Threading.Tasks.Task sendFileAsync(System.IO.FileInfo fileInfo);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/single")]
-        void single(int i, string path);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/single")]
-        System.Threading.Tasks.Task singleAsync(int i, string path);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceChat/getFileList", ReplyAction="http://tempuri.org/IServiceChat/getFileListResponse")]
-        System.IO.FileInfo[] getFileList();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceChat/getFileList", ReplyAction="http://tempuri.org/IServiceChat/getFileListResponse")]
-        System.Threading.Tasks.Task<System.IO.FileInfo[]> getFileListAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,9 +39,6 @@ namespace client.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/MessageCallBack")]
         void MessageCallBack(string message);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/ReceiveFile")]
-        void ReceiveFile(System.IO.FileInfo fileinfo, string path);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -124,46 +91,6 @@ namespace client.ServiceReference1 {
         
         public System.Threading.Tasks.Task SendMessageAsync(string message, int identificator) {
             return base.Channel.SendMessageAsync(message, identificator);
-        }
-        
-        public void sendid(int id) {
-            base.Channel.sendid(id);
-        }
-        
-        public System.Threading.Tasks.Task sendidAsync(int id) {
-            return base.Channel.sendidAsync(id);
-        }
-        
-        public void sendID1(int id) {
-            base.Channel.sendID1(id);
-        }
-        
-        public System.Threading.Tasks.Task sendID1Async(int id) {
-            return base.Channel.sendID1Async(id);
-        }
-        
-        public void sendFile(System.IO.FileInfo fileInfo) {
-            base.Channel.sendFile(fileInfo);
-        }
-        
-        public System.Threading.Tasks.Task sendFileAsync(System.IO.FileInfo fileInfo) {
-            return base.Channel.sendFileAsync(fileInfo);
-        }
-        
-        public void single(int i, string path) {
-            base.Channel.single(i, path);
-        }
-        
-        public System.Threading.Tasks.Task singleAsync(int i, string path) {
-            return base.Channel.singleAsync(i, path);
-        }
-        
-        public System.IO.FileInfo[] getFileList() {
-            return base.Channel.getFileList();
-        }
-        
-        public System.Threading.Tasks.Task<System.IO.FileInfo[]> getFileListAsync() {
-            return base.Channel.getFileListAsync();
         }
     }
 }

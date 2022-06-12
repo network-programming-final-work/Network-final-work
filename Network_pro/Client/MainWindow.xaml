@@ -14,12 +14,10 @@
             </Grid.ColumnDefinitions>
             <TextBox x:Name="textBoxUsername"  HorizontalAlignment="Left" Height="49" Margin="9.333,10,0,0" TextWrapping="Wrap" Text="用户名" VerticalAlignment="Top" Width="391" FontSize="19" VerticalContentAlignment="Center" Background="White" Foreground="#FF0E0101"/>
             <Button  x:Name ="bConnectDisconnect" Click="Button_Click" Content="点击连接" HorizontalAlignment="Left" Margin="503,10,0,0" VerticalAlignment="Top" Width="239" Height="49" FontSize="19" Background="White" Foreground="#FF0E0101" HorizontalContentAlignment="Center"/>
-            <ListBox  x:Name="listBoxChat" HorizontalAlignment="Left" Height="233" Margin="9,64,0,0" VerticalAlignment="Top" Width="733" FontSize="13" Background="White" Foreground="#FF0E0101" VerticalContentAlignment="Top"  />
+            <ListBox x:Name="listBoxChat" HorizontalAlignment="Left" Height="233" Margin="9,64,0,0" VerticalAlignment="Top" Width="733" FontSize="13" Background="White" Foreground="#FF0E0101" VerticalContentAlignment="Top"  />
             <TextBox x:Name="textBoxMessage" HorizontalAlignment="Left" Height="89" Margin="9,302,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="733" KeyDown="textBoxMessage_KeyDown" FontSize="14" Background="White" Foreground="#FF0E0101" />
 
         </Grid>
-        <Button x:Name="sendBtn" Click="sendBtn_Click" Content="发送文件" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="81,25,0,0" Height="31"/>
-        <Button x:Name="receivebtn" Click="receivebtn_Click" Content="接收文件" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="568,23,0,0" Height="36"/>
 
     </Grid>
 </Window>
