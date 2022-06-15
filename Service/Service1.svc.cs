@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Mail;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
@@ -18,13 +19,75 @@ namespace Service
         public string name="";
         public static int userId = 0;
         string connString = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
-        public bool AddUser(string name, string pwd)//注册
+
+        public  int Send(string email, string text)//发送邮件
+        {
+            SmtpClient client = new SmtpClient("smtp.qq.com");
+            client.EnableSsl = true;
+            client.UseDefaultCredentials = false;
+            client.Credentials = new System.Net.NetworkCredential("1031563986@qq.com", "chifbuaewyfdbfbb");//"QQ邮箱", "授权码" //存入系统设置以便修改。
+            MailAddress from = new MailAddress("1031563986@qq.com", "崔文帅", Encoding.UTF8);//初始化发件人
+            MailAddress to = new MailAddress(email, "", Encoding.UTF8);//初始化收件人
+            //设置邮件内容
+            MailMessage message = new MailMessage(from, to);
+            message.Subject = "找回密码";//邮件标题
+            message.SubjectEncoding = Encoding.UTF8;//标题格式为UTF8
+            message.Body = text;//邮件内容
+            message.BodyEncoding = Encoding.UTF8;//内容格式为UTF8
+            message.IsBodyHtml = true;
+
+            //发送邮件
+            try
+            {
+                client.Send(message);
+                return 1;
+                //MessageBox.Show("密码已发送到您的邮箱！");
+            }
+            catch (InvalidOperationException iex)
+            {
+                // MessageBox.Show(iex.Message);
+                return 0;
+            }
+            
+        }
+
+        public bool UpdatePwd(string name, string newpwd, string email)//修改密码
         {
             SqlConnection conn = new SqlConnection(connString);
             try
             {
                 conn.Open();
-                string sql = "insert into tbUsers values('" + name + "','" + pwd + "')";
+                string sql = "update tbUsers set UserPwd='" + newpwd + "'  where UserName='" + name + "' and Email='" + email + "' ";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                int rows = cmd.ExecuteNonQuery();//受影响的行数
+                if (rows > 0)
+                {
+                    conn.Close();
+                    conn.Dispose();
+                    return true;
+                }
+                else
+                {
+                    conn.Close();
+                    conn.Dispose();
+                    return false;
+                }
+            }
+            catch
+            {
+                conn.Close();
+                conn.Dispose();
+                return false;
+            }
+        }
+
+        public bool AddUser(string name, string pwd,string email)//注册
+        {
+            SqlConnection conn = new SqlConnection(connString);
+            try
+            {
+                conn.Open();
+                string sql = "insert into tbUsers values('" + name + "','" + pwd + "','" + email + "')";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 int rows = cmd.ExecuteNonQuery();//受影响的行数
                 if (rows>0)

@@ -15,6 +15,12 @@ namespace DZY_NoteSystem.LoginServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LoginServiceReference.IService1")]
     public interface IService1 {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Send", ReplyAction="http://tempuri.org/IService1/SendResponse")]
+        int Send(string email, string text);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Send", ReplyAction="http://tempuri.org/IService1/SendResponse")]
+        System.Threading.Tasks.Task<int> SendAsync(string email, string text);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IsLogin", ReplyAction="http://tempuri.org/IService1/IsLoginResponse")]
         bool IsLogin(string name, string pwd);
         
@@ -22,10 +28,10 @@ namespace DZY_NoteSystem.LoginServiceReference {
         System.Threading.Tasks.Task<bool> IsLoginAsync(string name, string pwd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddUser", ReplyAction="http://tempuri.org/IService1/AddUserResponse")]
-        bool AddUser(string name, string pwd);
+        bool AddUser(string name, string pwd, string email);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddUser", ReplyAction="http://tempuri.org/IService1/AddUserResponse")]
-        System.Threading.Tasks.Task<bool> AddUserAsync(string name, string pwd);
+        System.Threading.Tasks.Task<bool> AddUserAsync(string name, string pwd, string email);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/showInfo", ReplyAction="http://tempuri.org/IService1/showInfoResponse")]
         System.Data.DataTable showInfo(int state);
@@ -50,6 +56,12 @@ namespace DZY_NoteSystem.LoginServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Update", ReplyAction="http://tempuri.org/IService1/UpdateResponse")]
         System.Threading.Tasks.Task<bool> UpdateAsync(int infoId, string infoContent, int typeInfo, System.DateTime finishTime);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdatePwd", ReplyAction="http://tempuri.org/IService1/UpdatePwdResponse")]
+        bool UpdatePwd(string name, string newpwd, string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdatePwd", ReplyAction="http://tempuri.org/IService1/UpdatePwdResponse")]
+        System.Threading.Tasks.Task<bool> UpdatePwdAsync(string name, string newpwd, string email);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Add", ReplyAction="http://tempuri.org/IService1/AddResponse")]
         bool Add(string infoContent, int typeInfo, System.DateTime finishTime, int infoState);
@@ -97,6 +109,14 @@ namespace DZY_NoteSystem.LoginServiceReference {
                 base(binding, remoteAddress) {
         }
         
+        public int Send(string email, string text) {
+            return base.Channel.Send(email, text);
+        }
+        
+        public System.Threading.Tasks.Task<int> SendAsync(string email, string text) {
+            return base.Channel.SendAsync(email, text);
+        }
+        
         public bool IsLogin(string name, string pwd) {
             return base.Channel.IsLogin(name, pwd);
         }
@@ -105,12 +125,12 @@ namespace DZY_NoteSystem.LoginServiceReference {
             return base.Channel.IsLoginAsync(name, pwd);
         }
         
-        public bool AddUser(string name, string pwd) {
-            return base.Channel.AddUser(name, pwd);
+        public bool AddUser(string name, string pwd, string email) {
+            return base.Channel.AddUser(name, pwd, email);
         }
         
-        public System.Threading.Tasks.Task<bool> AddUserAsync(string name, string pwd) {
-            return base.Channel.AddUserAsync(name, pwd);
+        public System.Threading.Tasks.Task<bool> AddUserAsync(string name, string pwd, string email) {
+            return base.Channel.AddUserAsync(name, pwd, email);
         }
         
         public System.Data.DataTable showInfo(int state) {
@@ -143,6 +163,14 @@ namespace DZY_NoteSystem.LoginServiceReference {
         
         public System.Threading.Tasks.Task<bool> UpdateAsync(int infoId, string infoContent, int typeInfo, System.DateTime finishTime) {
             return base.Channel.UpdateAsync(infoId, infoContent, typeInfo, finishTime);
+        }
+        
+        public bool UpdatePwd(string name, string newpwd, string email) {
+            return base.Channel.UpdatePwd(name, newpwd, email);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdatePwdAsync(string name, string newpwd, string email) {
+            return base.Channel.UpdatePwdAsync(name, newpwd, email);
         }
         
         public bool Add(string infoContent, int typeInfo, System.DateTime finishTime, int infoState) {

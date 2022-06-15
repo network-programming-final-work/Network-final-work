@@ -13,11 +13,12 @@ namespace Service
     [ServiceContract]
     public interface IService1
     {
-
+        [OperationContract]
+        int Send(string email, string text);
         [OperationContract]
         bool IsLogin(string name, string pwd);
         [OperationContract]
-        bool AddUser(string name, string pwd);
+        bool AddUser(string name, string pwd,string email);
         [OperationContract]
         DataTable showInfo(int state);
         [OperationContract]
@@ -26,6 +27,8 @@ namespace Service
         int getId();
         [OperationContract]
         bool Update(int infoId, string infoContent, int typeInfo, DateTime finishTime);
+        [OperationContract]
+        bool UpdatePwd(string name, string newpwd,string email);
         [OperationContract]
         bool Add(string infoContent, int typeInfo, DateTime finishTime, int infoState);
         [OperationContract]

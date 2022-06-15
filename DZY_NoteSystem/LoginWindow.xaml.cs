@@ -37,7 +37,7 @@ namespace DZY_NoteSystem
             {
                 ckbRemember.IsChecked = false;
             }
-            if (GetSettingString("isLogin") == "true")
+          /*  if (GetSettingString("isLogin") == "true")
             {
                 
                 btnLogin_Click(null, null);
@@ -45,7 +45,7 @@ namespace DZY_NoteSystem
             else
             {
                 LoginCheckBox.IsChecked = false;
-            }
+            }*/
         }
 
         private enum Strength
@@ -201,6 +201,11 @@ namespace DZY_NoteSystem
             ConfigurationManager.RefreshSection("appSettings");
         }
 
-
+        private void btnRegister_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            FindPassword findPwd = new FindPassword();
+            findPwd.Show();
+            this.Close();
+        }
     }
 }

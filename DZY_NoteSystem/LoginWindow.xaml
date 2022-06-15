@@ -71,6 +71,7 @@
         <Button Content="登   录" Height="30" Width="180" FontSize="12"
                 Background="	#6495ED" Cursor="Hand" Foreground="White" 
                 BorderBrush="	#6495ED" Grid.Column="1" Margin="0,10" Grid.Row="2" x:Name="btnLogin" Click="btnLogin_Click"/>
-        
+        <Button Grid.Column="2" Margin="20,55,20,14" BorderThickness="0" Background="#00000000" FontSize="11" Foreground="#2786E4" Cursor="Hand" Grid.Row="1" x:Name="btnRegister_Copy"  Content="找回密码" Click="btnRegister_Copy_Click"/>
+
     </Grid>
 </Window>

@@ -16,16 +16,19 @@ using System.Windows.Shapes;
 namespace DZY_NoteSystem
 {
     /// <summary>
-    /// RegisterWindow.xaml 的交互逻辑
+    /// FindPassword.xaml 的交互逻辑
     /// </summary>
-    public partial class RegisterWindow : Window
+    /// 
+
+
+    public partial class FindPassword : Window
     {
-        public RegisterWindow()
+        public FindPassword()
         {
             InitializeComponent();
         }
-
         string text = "";
+
         private enum Strength
         {
             Invalid = 0, //无效密码
@@ -58,107 +61,7 @@ namespace DZY_NoteSystem
             return Strength.Strong; //由数字、字母、符号构成的密码
         }
 
-
-        private void btnRegister_Click(object sender, RoutedEventArgs e)
-        {
-            string name = txtUserName.Text.ToString();
-            string pwd = txtUserPwd.Password.ToString();
-            string email = Email.Text;
-            string repwd = txtReUserPwd.Password.ToString();
-            string random_num = Random_Num.Text;
-            if (text.Equals(random_num))
-            {
-                if (pwd.Equals(repwd))
-                {
-                    Service1Client service = new Service1Client();
-                    if (service.AddUser(name, pwd, email))
-                    {
-                        MessageBox.Show("注册状态：注册成功！");
-                        LoginWindow login = new LoginWindow();
-                        login.Show();
-                        this.Close();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show( "注册状态：确认密码错误！");
-                }
-            }
-            else
-            {
-                MessageBox.Show("验证码错误");                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
-            }
-           
-        }
-
-        /* private void txtReUserPwd_TextChanged(object sender, TextChangedEventArgs e)
-         {
-             string pwd = txtUserPwd.Password.ToString();
-
-             while (true)
-             {
-                 if (PasswordStrength(pwd) == Strength.Strong)
-                 {
-                     txtReUserPwd.IsReadOnly = false;
-                     break;
-                 }
-                 else
-                 {
-                     label.Content = "注册状态：密码强度太低！";
-                     txtReUserPwd.IsReadOnly = true;
-                     break;
-                 }
-
-             }
-
-
-         }*/
-
-        private void txtUserPwd_PasswordChanged(object sender, RoutedEventArgs e)
-        {
-            string pwd = txtUserPwd.Password.ToString();
-            string repwd = txtReUserPwd.Password.ToString();
-            if (txtUserPwd.Password == "")
-            {
-                bd_Low.Background = Brushes.Gray;
-                bd_Centre.Background = Brushes.Gray;
-                bd_High.Background = Brushes.Gray;
-            }
-            else if (PasswordStrength(pwd) == Strength.Strong)
-            {
-
-                txtReUserPwd.IsEnabled = true;//显示确认新密码密码
-                bd_Low.Background = Brushes.Green;
-                bd_Centre.Background = Brushes.Green;
-                bd_High.Background = Brushes.Green;
-                txtReUserPwd.Opacity = 1;
-            }
-            else if (PasswordStrength(pwd) == Strength.Normal)
-            {
-                bd_Low.Background = Brushes.Red;
-                bd_Centre.Background = Brushes.Red;
-                bd_High.Background = Brushes.Gray;
-                txtReUserPwd.IsEnabled = false;//禁止确认新密码密码
-
-            }
-            else if (PasswordStrength(pwd) == Strength.Weak)
-            {
-                bd_Low.Background = Brushes.Red;
-                bd_Centre.Background = Brushes.Gray;
-                bd_High.Background = Brushes.Gray;
-                txtReUserPwd.IsEnabled = false;//禁止确认新密码密码
-            }
-            else
-            {
-                txtReUserPwd.IsEnabled = false;//禁止确认新密码密码
-                txtReUserPwd.Opacity = 0.5;
-            }
-
-
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void send_num_Click(object sender, RoutedEventArgs e)
         {
             Service1Client service = new Service1Client();
 
@@ -177,6 +80,88 @@ namespace DZY_NoteSystem
                 MessageBox.Show("密码...！");
             }
         }
+
+        private void txtUserPwd_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            string pwd = NewPwd.Password.ToString();
+         
+            if (NewPwd.Password == "")
+            {
+                bd_Low.Background = Brushes.Gray;
+                bd_Centre.Background = Brushes.Gray;
+                bd_High.Background = Brushes.Gray;
+                FixPwd.IsEnabled = false;
+                FixPwd.Opacity = 0.5;
+            }
+            else if (PasswordStrength(pwd) == Strength.Strong)
+            {
+
+                FixPwd.IsEnabled = true;
+                bd_Low.Background = Brushes.Green;
+                bd_Centre.Background = Brushes.Green;
+                bd_High.Background = Brushes.Green;
+               
+            }
+            else if (PasswordStrength(pwd) == Strength.Normal)
+            {
+                bd_Low.Background = Brushes.Red;
+                bd_Centre.Background = Brushes.Red;
+                bd_High.Background = Brushes.Gray;
+                FixPwd.IsEnabled = false;
+                FixPwd.Opacity = 0.5;
+
+            }
+            else if (PasswordStrength(pwd) == Strength.Weak)
+            {
+                bd_Low.Background = Brushes.Red;
+                bd_Centre.Background = Brushes.Gray;
+                bd_High.Background = Brushes.Gray;
+                FixPwd.IsEnabled = false;
+                FixPwd.Opacity = 0.5;
+            }
+            else
+            {
+                FixPwd.IsEnabled = false;
+                FixPwd.Opacity = 0.5;
+            }
+
+
+
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Service1Client service = new Service1Client();
+            string newpwd = NewPwd.Password.ToString();
+            string username = UserName.Text;
+            string email = Email.Text;
+           
+            
+                if (text.Equals(Random_Number.Text))
+                {
+                    bool flag = service.UpdatePwd(username, newpwd, email);
+                    if (flag)
+                    {
+                        MessageBox.Show("密码修改成功！");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("修改失败！");
+                    }
+                }
+
+
+                else
+                {
+                    MessageBox.Show("验证码错误！");
+                }
+            
+           
+
+         
+
+            // bool updatepwd = service.UpdatePwd(username, newpwd, email);
+
+        }
     }
 }
-
