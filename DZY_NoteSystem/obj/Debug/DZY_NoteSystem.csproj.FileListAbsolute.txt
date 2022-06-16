@@ -281,3 +281,36 @@ C:\Users\10315\Desktop\新建文件夹 (2)\DZY_NoteSystem\obj\Debug\DZY_NoteSyst
 C:\Users\10315\Desktop\新建文件夹 (2)\DZY_NoteSystem\obj\Debug\DZY_NoteSystem.csproj.GenerateResource.cache
 C:\Users\10315\Desktop\新建文件夹 (2)\DZY_NoteSystem\obj\Debug\DZY_NoteSystem.csproj.CoreCompileInputs.cache
 C:\Users\10315\Desktop\新建文件夹 (2)\DZY_NoteSystem\obj\Debug\DZY_NoteSystem.csproj.CopyComplete
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\bin\Debug\DZY_NoteSystem.exe.config
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\bin\Debug\DZY_NoteSystem.exe
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\bin\Debug\DZY_NoteSystem.pdb
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\bin\Debug\Service.dll
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\bin\Debug\Service.pdb
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\bin\Debug\Service.dll.config
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\DZY_NoteSystem.csproj.AssemblyReference.cache
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\Example\AddInfoPage.g.cs
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\Example\CancelPage.g.cs
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\Example\InfoPage.g.cs
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\Example\SearchPage.g.cs
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\FindPassword.g.cs
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\LoginWindow.g.cs
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\MainWindow.g.cs
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\RegisterWindow.g.cs
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\App.g.cs
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\DZY_NoteSystem_MarkupCompile.cache
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\DZY_NoteSystem_MarkupCompile.lref
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\Example\AddInfoPage.baml
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\Example\CancelPage.baml
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\Example\InfoPage.baml
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\Example\SearchPage.baml
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\FindPassword.baml
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\LoginWindow.baml
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\MainWindow.baml
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\RegisterWindow.baml
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\DZY_NoteSystem.g.resources
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\DZY_NoteSystem.Properties.Resources.resources
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\DZY_NoteSystem.csproj.GenerateResource.cache
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\DZY_NoteSystem.csproj.CoreCompileInputs.cache
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\DZY_NoteSystem.csproj.CopyComplete
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\DZY_NoteSystem.exe
+H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\DZY_NoteSystem.pdb

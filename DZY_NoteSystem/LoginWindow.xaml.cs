@@ -85,8 +85,10 @@ namespace DZY_NoteSystem
         {
             string name = txtUserName.Text.ToString();
             string pwd = txtUserPwd.Password.ToString();
+            
             Service1Client service = new Service1Client();
-            bool login = service.IsLogin(name, pwd);
+            string pwdEncrypt = service.MD5Encrypt(pwd);
+            bool login = service.IsLogin(name, pwdEncrypt);
             if (Convert.ToBoolean(ckbRemember.IsChecked))
             {
                 UpdateSettingString("userName", txtUserName.Text);

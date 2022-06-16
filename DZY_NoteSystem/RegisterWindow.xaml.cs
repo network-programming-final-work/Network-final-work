@@ -62,6 +62,7 @@ namespace DZY_NoteSystem
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
             string name = txtUserName.Text.ToString();
+          
             string pwd = txtUserPwd.Password.ToString();
             string email = Email.Text;
             string repwd = txtReUserPwd.Password.ToString();
@@ -71,7 +72,8 @@ namespace DZY_NoteSystem
                 if (pwd.Equals(repwd))
                 {
                     Service1Client service = new Service1Client();
-                    if (service.AddUser(name, pwd, email))
+                    string pwdEncrypt = service.MD5Encrypt(pwd);
+                    if (service.AddUser(name, pwdEncrypt, email))
                     {
                         MessageBox.Show("注册状态：注册成功！");
                         LoginWindow login = new LoginWindow();
@@ -164,10 +166,11 @@ namespace DZY_NoteSystem
 
             Random rd = new Random();
             string email = Email.Text;
+            string title = "账号注册验证码";
             int i = rd.Next(100000, 1000000);
             text = i.ToString();
 
-            int tag = service.Send(email, text);
+            int tag = service.Send(email,title, text);
             if (tag == 1)
             {
                 MessageBox.Show("密码已发送到您的邮箱！");

@@ -15,11 +15,17 @@ namespace DZY_NoteSystem.LoginServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LoginServiceReference.IService1")]
     public interface IService1 {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Send", ReplyAction="http://tempuri.org/IService1/SendResponse")]
-        int Send(string email, string text);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MD5Encrypt", ReplyAction="http://tempuri.org/IService1/MD5EncryptResponse")]
+        string MD5Encrypt(string str);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MD5Encrypt", ReplyAction="http://tempuri.org/IService1/MD5EncryptResponse")]
+        System.Threading.Tasks.Task<string> MD5EncryptAsync(string str);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Send", ReplyAction="http://tempuri.org/IService1/SendResponse")]
-        System.Threading.Tasks.Task<int> SendAsync(string email, string text);
+        int Send(string email, string title, string text);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Send", ReplyAction="http://tempuri.org/IService1/SendResponse")]
+        System.Threading.Tasks.Task<int> SendAsync(string email, string title, string text);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IsLogin", ReplyAction="http://tempuri.org/IService1/IsLoginResponse")]
         bool IsLogin(string name, string pwd);
@@ -109,12 +115,20 @@ namespace DZY_NoteSystem.LoginServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public int Send(string email, string text) {
-            return base.Channel.Send(email, text);
+        public string MD5Encrypt(string str) {
+            return base.Channel.MD5Encrypt(str);
         }
         
-        public System.Threading.Tasks.Task<int> SendAsync(string email, string text) {
-            return base.Channel.SendAsync(email, text);
+        public System.Threading.Tasks.Task<string> MD5EncryptAsync(string str) {
+            return base.Channel.MD5EncryptAsync(str);
+        }
+        
+        public int Send(string email, string title, string text) {
+            return base.Channel.Send(email, title, text);
+        }
+        
+        public System.Threading.Tasks.Task<int> SendAsync(string email, string title, string text) {
+            return base.Channel.SendAsync(email, title, text);
         }
         
         public bool IsLogin(string name, string pwd) {

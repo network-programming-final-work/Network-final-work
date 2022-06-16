@@ -14,7 +14,9 @@ namespace Service
     public interface IService1
     {
         [OperationContract]
-        int Send(string email, string text);
+        string MD5Encrypt(string str);
+        [OperationContract]
+        int Send(string email, string title,string text);
         [OperationContract]
         bool IsLogin(string name, string pwd);
         [OperationContract]

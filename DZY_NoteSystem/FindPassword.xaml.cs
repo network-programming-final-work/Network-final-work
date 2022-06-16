@@ -67,10 +67,11 @@ namespace DZY_NoteSystem
 
             Random rd = new Random();
             string email = Email.Text;
+            string title = "找回密码验证码";
             int i = rd.Next(100000, 1000000);
             text = i.ToString();
 
-            int tag = service.Send(email, text);
+            int tag = service.Send(email, title,text);
             if (tag == 1)
             {
                 MessageBox.Show("密码已发送到您的邮箱！");
@@ -138,7 +139,8 @@ namespace DZY_NoteSystem
             
                 if (text.Equals(Random_Number.Text))
                 {
-                    bool flag = service.UpdatePwd(username, newpwd, email);
+                string newpwdEncrypt = service.MD5Encrypt(newpwd);
+                    bool flag = service.UpdatePwd(username, newpwdEncrypt, email);
                     if (flag)
                     {
                         MessageBox.Show("密码修改成功！");

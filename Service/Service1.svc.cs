@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Net.Mail;
 using System.Runtime.Serialization;
+using System.Security.Cryptography;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
@@ -20,7 +21,23 @@ namespace Service
         public static int userId = 0;
         string connString = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
 
-        public  int Send(string email, string text)//发送邮件
+        public string MD5Encrypt(string str)
+        {
+            MD5 md5 = MD5.Create();
+            byte[] buffer = Encoding.UTF8.GetBytes(str);//将字符串转成字节数组
+            byte[] byteArray = md5.ComputeHash(buffer);//调用加密方法
+            StringBuilder sb = new StringBuilder();
+            foreach (byte b in byteArray)//遍历字节数组
+            {
+                sb.Append(b.ToString("x2"));//将字节数组转成16进制的字符串。X表示16进制，2表示每个16字符占2位
+            }
+            return sb.ToString();
+
+        }
+
+
+
+        public  int Send(string email,string title, string text)//发送邮件
         {
             SmtpClient client = new SmtpClient("smtp.qq.com");
             client.EnableSsl = true;
@@ -30,9 +47,9 @@ namespace Service
             MailAddress to = new MailAddress(email, "", Encoding.UTF8);//初始化收件人
             //设置邮件内容
             MailMessage message = new MailMessage(from, to);
-            message.Subject = "找回密码";//邮件标题
+            message.Subject = title;//邮件标题
             message.SubjectEncoding = Encoding.UTF8;//标题格式为UTF8
-            message.Body = text;//邮件内容
+            message.Body ="你的验证码是：\n"+ text;//邮件内容
             message.BodyEncoding = Encoding.UTF8;//内容格式为UTF8
             message.IsBodyHtml = true;
 
