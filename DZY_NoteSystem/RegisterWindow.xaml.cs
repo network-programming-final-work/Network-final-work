@@ -180,6 +180,12 @@ namespace DZY_NoteSystem
                 MessageBox.Show("密码...！");
             }
         }
+
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            this.Owner.Show();
+        }
     }
 }
 

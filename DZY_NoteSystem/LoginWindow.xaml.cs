@@ -142,7 +142,8 @@ namespace DZY_NoteSystem
         {
             RegisterWindow register = new RegisterWindow();
             register.Show();
-            this.Close();
+            register.Owner = this;
+            this.Hide();
         }
 
         private void txtUserName_GotFocus(object sender, RoutedEventArgs e)
@@ -207,7 +208,8 @@ namespace DZY_NoteSystem
         {
             FindPassword findPwd = new FindPassword();
             findPwd.Show();
-            this.Close();
+            findPwd.Owner = this;
+            this.Hide();
         }
     }
 }

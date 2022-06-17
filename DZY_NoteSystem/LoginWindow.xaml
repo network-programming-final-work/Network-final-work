@@ -9,27 +9,28 @@
      Width="420"		
      ResizeMode="NoResize"	
      Background="#EBF2F9"	
-     AllowsTransparency="False"	
-     WindowStyle="none"		
+     AllowsTransparency="False"
+     WindowStyle="ThreeDBorderWindow"
      WindowStartupLocation="CenterScreen">
-    
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="180" />
-            <RowDefinition Height="*" />
+
+            <RowDefinition Height="120" />
+            <RowDefinition Height="110" />
             <RowDefinition Height="50" />
-            
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="120" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="180" />
             <ColumnDefinition Width="120" />
         </Grid.ColumnDefinitions>
-        <Image Source="Image/title.png" Stretch="UniformToFill" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+        <Image Source="Image/title.png" Stretch="Fill"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
         <Image Source="Image/user.png" Grid.Row="1" Grid.Column="0" Margin="21,5,0,0" />
         <!--账号密码-->
-        <TextBox   Height="30" Width="180" FontSize="14" MaxLength="20" TextBlock.LineHeight="22" TextBlock.LineStackingStrategy="BlockLineHeight"
-                 Foreground="Black" BorderBrush="#ccc" Grid.Row="1" Grid.Column="1" Margin="0,10,0,50" x:Name="txtUserName">
+        <TextBox   Height="30" FontSize="14" MaxLength="20" TextBlock.LineHeight="22" TextBlock.LineStackingStrategy="BlockLineHeight"
+                 Foreground="Black" BorderBrush="#ccc" Grid.Row="1" Grid.Column="1" Margin="2,22,1.6,0" x:Name="txtUserName" VerticalAlignment="Top">
             <TextBox.Resources>
                 <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                     <VisualBrush.Visual>
@@ -50,17 +51,15 @@
                 </Style>
             </TextBox.Style>
         </TextBox>
-        <PasswordBox Background="#00000000" Height="30" Width="180" FontSize="14" MaxLength="20" TextBlock.LineHeight="22" TextBlock.LineStackingStrategy="BlockLineHeight"
-                 Foreground="Black" BorderBrush="#ccc" Grid.Row="1" Grid.Column="1" Margin="0,40,0,20"     x:Name="txtUserPwd">
-            
-        </PasswordBox>
+        <PasswordBox Background="#00000000" FontSize="14" MaxLength="20" Height="30" TextBlock.LineHeight="22" TextBlock.LineStackingStrategy="BlockLineHeight"
+                 Foreground="Black" BorderBrush="#ccc" Grid.Row="1" Grid.Column="1" Margin="2,55,1.6,23"     x:Name="txtUserPwd"/>
         <!--记住密码等CheckBox-->
         <CheckBox x:Name="ckbRemember" Grid.Row="1" Grid.Column="1" Foreground="#8D9195" BorderBrush="#8d9195" FontSize="11" TextBlock.LineHeight="16"
-                  TextBlock.LineStackingStrategy="BlockLineHeight" Margin="0,75,0,-25">
+                  TextBlock.LineStackingStrategy="BlockLineHeight" Margin="0,95,0,-25">
             记住密码
         </CheckBox>
         <CheckBox IsChecked="False" x:Name="LoginCheckBox" Grid.Row="1" Grid.Column="1" Foreground="#8D9195" BorderBrush="#8d9195" FontSize="11" TextBlock.LineHeight="16"
-                  TextBlock.LineStackingStrategy="BlockLineHeight" Margin="110,75,0,-35" Grid.RowSpan="2">
+                  TextBlock.LineStackingStrategy="BlockLineHeight" Margin="110,95,0,-35" Grid.RowSpan="2">
             自动登录
         </CheckBox>
         <!--注册账号-->

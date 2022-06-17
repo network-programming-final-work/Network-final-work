@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\obj\Debug\
+C:\Users\DELL\Desktop\Network-final-work\DZY_NoteSystem\obj\Debug\
 DZY_NoteSystem
 none
 false
 DEBUG;TRACE
-H:\Network_FinalWork\Network-final-work\DZY_NoteSystem\App.xaml
+C:\Users\DELL\Desktop\Network-final-work\DZY_NoteSystem\App.xaml
 8-1201560183
 
 141793267809
-171699372618
+18-1454157378
 Example\AddInfoPage.xaml;Example\CancelPage.xaml;Example\InfoPage.xaml;Example\SearchPage.xaml;FindPassword.xaml;LoginWindow.xaml;MainWindow.xaml;RegisterWindow.xaml;
 
-False
+True
 

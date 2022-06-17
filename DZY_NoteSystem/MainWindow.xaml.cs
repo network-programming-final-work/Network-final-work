@@ -44,5 +44,12 @@ namespace DZY_NoteSystem
             login.Show();
             this.Close();
         }
+
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            this.Close();
+            loginWindow.Show();
+        }
     }
 }

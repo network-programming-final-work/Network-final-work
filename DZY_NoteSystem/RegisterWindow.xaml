@@ -67,7 +67,8 @@
         <DockPanel Grid.Row="2" Grid.Column="0">
             <Label HorizontalAlignment="Right" FontWeight="Bold" Content="确认密码：" VerticalAlignment="Center" FontSize="15px"></Label>
         </DockPanel>
-        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" Height="41" Margin="122,0" Grid.RowSpan="2" VerticalAlignment="Top">
+        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" Height="41"  Grid.RowSpan="2" VerticalAlignment="Top">
+            <Button Width="100" Content="返     回" x:Name="back" Click="back_Click"  Margin="10 0 10 0" Foreground="White" BorderBrush="#6495ED" Background="#6495ED"></Button>
             <Button Width="100" Content="注     册" x:Name="btnRegister" Click="btnRegister_Click"  Margin="10 0 10 0" Foreground="White" BorderBrush="#6495ED" Background="#6495ED"></Button>
         </StackPanel>
         <DockPanel Grid.Column="1" Grid.Row="2">

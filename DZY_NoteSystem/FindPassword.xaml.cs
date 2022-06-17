@@ -165,5 +165,11 @@ namespace DZY_NoteSystem
             // bool updatepwd = service.UpdatePwd(username, newpwd, email);
 
         }
+
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            this.Owner.Show();
+        }
     }
 }

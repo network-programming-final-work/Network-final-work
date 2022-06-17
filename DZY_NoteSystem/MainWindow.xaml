@@ -11,7 +11,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-    <DockPanel Grid.Row="0" Background="Cornsilk" LastChildFill="False" Height="30">
+        <DockPanel Grid.Row="0" Background="Cornsilk" LastChildFill="False" Height="30">
             <TextBlock Text="用户名：" DockPanel.Dock="Left" VerticalAlignment="Center" Foreground="#2786E4" Padding="30 0 0 0"/>
             <Label x:Name="userName" Content=" " Width="100" VerticalAlignment="Center"/>
             <Button Name="btnLogout" Content="退出" DockPanel.Dock="Left" Padding="10 0 10 0" Margin="5" Click="btnLogout_Click" Background="White"/>
@@ -46,6 +46,9 @@
                         <Button Content="添 加  信 息" Tag="/Example/AddInfoPage.xaml" Background="#6495ED"></Button>
                         <Button Content="查看取消任务" Tag="/Example/CancelPage.xaml" Background="#6495ED"></Button>
                         <Button Content="模 糊  搜 索" Tag="/Example/SearchPage.xaml" Background="#6495ED"></Button>
+                    </StackPanel>
+                    <StackPanel VerticalAlignment="Bottom">
+                        <Button HorizontalContentAlignment="Center" HorizontalAlignment="Right" Background="#6495ED" Margin="5,0,-14.2,0" FontSize="10" Padding="15 0 15 0" Foreground="White" FontWeight="Bold" Content="返         回" x:Name="back" Click="back_Click" Height="30" Width="101"/>
                     </StackPanel>
                 </Grid>
             </Grid>

@@ -63,3 +63,9 @@ H:\Network_FinalWork\Network-final-work\Service\obj\Debug\Service.csproj.CoreCom
 H:\Network_FinalWork\Network-final-work\Service\obj\Debug\Service.dll
 H:\Network_FinalWork\Network-final-work\Service\obj\Debug\Service.pdb
 H:\Network_FinalWork\Network-final-work\Service\obj\Debug\Service.csproj.AssemblyReference.cache
+C:\Users\DELL\Desktop\Network-final-work\Service\bin\Service.dll.config
+C:\Users\DELL\Desktop\Network-final-work\Service\bin\Service.dll
+C:\Users\DELL\Desktop\Network-final-work\Service\bin\Service.pdb
+C:\Users\DELL\Desktop\Network-final-work\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\Network-final-work\Service\obj\Debug\Service.dll
+C:\Users\DELL\Desktop\Network-final-work\Service\obj\Debug\Service.pdb
